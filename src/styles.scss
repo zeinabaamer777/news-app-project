@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'src/assets/styles/variables.scss';
+body {
+    // padding: 2em 23em;
+    background: $white;
+}
+// .mat-card{
+//     padding: 5px !important;
+// }
+
+// .mat-button .mat-button-wrapper>*, .mat-fab .mat-button-wrapper>*, .mat-flat-button .mat-button-wrapper>*, .mat-icon-button .mat-button-wrapper>*, .mat-mini-fab .mat-button-wrapper>*, .mat-raised-button .mat-button-wrapper>*, .mat-stroked-button .mat-button-wrapper>*{
+//     font-size: 16px;
+// }
+
+.mat-button .mat-button-wrapper > *, .mat-fab .mat-button-wrapper > *, .mat-flat-button .mat-button-wrapper > *, .mat-icon-button .mat-button-wrapper > *, .mat-mini-fab .mat-button-wrapper > *, .mat-raised-button .mat-button-wrapper > *, .mat-stroked-button .mat-button-wrapper > *{
+    font-size: 14px;
+}

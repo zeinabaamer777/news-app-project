@@ -1,0 +1,123 @@
+@import "../../../assets/styles/variables.scss";
+.img-article{
+    height: auto;
+    min-height: 250px;
+}
+.mat-card{
+    padding: 5px !important;
+    .mat-card-image{
+        width: 100%;
+        margin: auto;
+    }
+}
+.mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button{
+    margin: 0 !important;
+    padding: 0px 5px !important;
+}
+
+.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary{
+    color: gray !important;
+}
+.mat-icon{
+    height: 17px !important;
+}
+
+.card-image{
+    width: 100%;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.right-side{
+    margin-top: 5em;
+    .right-part-child-part{
+        padding: 1em;
+        border : 1px solid lightgray;
+        border-radius: .2rem;
+        margin-bottom: 2em;
+        .recent-articles{
+            margin-bottom: 1em;
+        }
+    }
+    h3,span{
+        color: $base-color
+    }
+    .most-popular{
+        margin-top: 1em;
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+    }
+    .mat-card-header {
+        .mat-card-avatar{
+            height: 100px;
+            width: 100px;
+        border-radius: 0;
+        }
+        .mat-card-title {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    .subscripe-form{
+        .btn-sm {
+            border-radius: 0 .2rem .2rem 0;
+        }
+        .form-control{
+            border-radius: .25rem 0 0 .25rem;
+        }
+        .form-group.row{
+            margin-right: 0;
+            margin-left: 0;
+    }
+    }
+    .social{
+        .fa {
+            padding: 10px;
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+          }
+          
+          .fa:hover {
+              opacity: 0.7;
+          }
+          
+          .fa-facebook {
+            background: #3B5998;
+            color: white;
+          }
+          
+          .fa-twitter {
+            background: #55ACEE;
+            color: white;
+          }
+          
+          .fa-google-plus {
+            background: #dd4b39;
+            color: white;
+          }
+          
+          .fa-linkedin {
+            background: #007bb5;
+            color: white;
+          }
+          
+          .fa-youtube {
+            background: #bb0000;
+            color: white;
+          }
+          
+          .fa-tumblr {
+            background: #2c4762;
+            color: white;
+          }
+    }
+    
+}
+
+

@@ -1,0 +1,122 @@
+<div class="example-container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="text-capitalize text-center mb-3">Latest news</h1>
+  
+      <div class="row">
+        <div class="my-3 col-md-6" *ngFor="let article of articles">
+          <mat-card
+            class="example-card card-custom-class"
+            (click)="catchArticle(article)"
+          >
+            <mat-card-header>
+              <div
+                mat-card-avatar
+                [ngStyle]="{
+                  'background-image':
+                    'url(../assets/images/' + article.source.id + '.png)',
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover'
+                }"
+                class="example-header-image"
+              ></div>
+              <mat-card-title class="title">{{ article.title }}</mat-card-title>
+              <mat-card-subtitle>{{ article.source.name }}</mat-card-subtitle>
+            </mat-card-header>
+            <img
+              mat-card-image
+              class="img-article"
+              src="{{ article.urlToImage }}"
+              [alt]="article.title"
+            />
+            <mat-card-content>
+              <p>
+                {{ article.description }}
+              </p>
+            </mat-card-content>
+            <!-- Actions btns -->
+            <mat-card-actions class="action-buttons">
+              <button mat-button color="primary">
+                <mat-icon>thumb_up_alt</mat-icon> 12 Likes
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>comment</mat-icon> Comments
+              </button>
+              <button mat-button color="primary">
+                <mat-icon>share</mat-icon> Share
+              </button>
+              <a
+                mat-button
+                color="primary"
+                href="{{ article.url }}"
+                target="_blank"
+                ><mat-icon>visibility</mat-icon> More</a
+              >
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-md-4 right-side">
+      
+      <div class="row" >
+         <div class="col-md-12  right-part-child-part" >
+          <h3 class="text-capitalize">recent articles</h3>
+            <!-- recentArticles -->
+          <mat-card  class="recent-articles" *ngFor="let article of recentArticles">
+            <mat-card-header>
+              <div
+                mat-card-avatar
+                [ngStyle]="{
+                  'background-image':
+                    'url(' + article.urlToImage + ')',
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover'
+                }"
+                class="example-header-image"
+              ></div>
+              <mat-card-title class="title">{{article.description.slice(0,60)}}</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+         </div>
+
+        <div class="col-md-12 most-popular right-part-child-part">
+          <h3 class="text-capitalize">most popular</h3>
+          <ul *ngFor="let article of mostPopular; let i = index">
+            <li> <span class="mr-2">{{i+1}}</span> {{article.title}}</li>
+          </ul>
+        </div>
+        <div class="col-md-12 right-part-child-part">
+          <h3 class="text-capitalize">good news newsletter</h3>
+          <p class="lead">
+            sign up for our newsletter for good news. sent every monday
+          </p>
+
+          <form class="subscripe-form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm">
+            <div class="form-group row">
+              <input type="text" class="form-control col-md-9" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+              <button type="submit" class="btn btn-primary btn-sm col-md-3"  [disabled]="!f.form.valid">submit</button>
+            </div>
+          
+          </form>
+
+        </div>
+
+        <div class="col-md-12  right-part-child-part">
+          <h4>Follow US</h4>
+          <div class="social">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-google-plus"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-youtube"></a>
+              <a href="#" class="fa fa-tumblr"></a>
+          </div>
+        </div>
+
+      </div>
+     
+    </div>
+  </div>
+</div>

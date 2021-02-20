@@ -1,0 +1,77 @@
+<div class="container">
+    <h1>
+        {{article.title}}
+    </h1>
+    <h6>By<span class="author"> {{article.author}}</span><span> Published On {{article.publishedAt|date}}</span></h6>
+    <hr>
+    
+    <div class="detailed-article-social">
+        <div class="row">
+   
+            <div class="col-md-3">
+             <ul class="unlisted">
+                 <li><i class="fa fa-envelope"></i> Email</li>
+                 <li><i class="fa fa-facebook-official"></i> facebook</li>
+                 <li><i class="fa fa-twitter"></i> twitter</li>
+                 <li><i class="fa fa-reply"></i> More</li>
+                          
+               </ul>
+            </div>
+
+         <div class="col-md-9 ">
+              <!-- single artice part data  -->
+                <div class="card">
+                    <img class="card-img-top"src={{article.urlToImage}}  
+                    [alt]="article.title">
+                    <div class="card-body">
+                      <p class="card-text">{{article.description}}</p>
+                    </div>
+                    
+                    <div class="card-body">
+                      <a href="#" class="card-link btn-success  py-1 px-2"><i class="fa fa-hand-o-up"></i> I like </a>
+                      <a href="#" class="card-link btn-danger py-1 px-2"><i class="fa fa-hand-o-down"></i> i dislike</a>
+                    </div>
+                  </div>
+
+              <!-- end  -->
+            <h2 class="text-capitalize my-4">comments</h2>
+            <mat-card class="example-card card-custom-class">
+              <mat-card-header>
+                <div
+                  mat-card-avatar
+                  [ngStyle]="{
+                    'background-image': 'url(' + comment.imagePath + ')',
+                    'background-repeat': 'no-repeat',
+                    'background-size': 'cover'
+                  }"
+                  class="example-header-image"
+                ></div>
+                <mat-card-title class="title">
+                    <span>
+                      {{ comment.name }}
+                    </span>
+      
+                    <span class="not-name">
+                      {{ comment.timeToComment }}
+                    </span>
+      
+                    <span class="not-name"> reply </span>
+                  
+                  </mat-card-title>
+                <mat-card-subtitle></mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  {{ comment.description }}
+                </p>
+              </mat-card-content>
+            </mat-card>
+      
+            <app-contact-form></app-contact-form>
+          </div>
+         
+       
+       </div>
+    </div>
+   
+</div>
